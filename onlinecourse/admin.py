@@ -9,7 +9,7 @@ class QuestionInline(admin.StackedInline):
 
 class ChoiceInline(admin.StackedInline):
     model = Choice
-    extra = 2
+    extra = 4
 
 class LessonInline(admin.StackedInline):
     model = Lesson
@@ -34,7 +34,6 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ['text']
 
 class ChoiceAdmin(admin.ModelAdmin):
-    inlines = [LessonInline]
     list_display = ('text','is_correct')
     list_filter = ['text','is_correct']
     search_fields = ['text']
